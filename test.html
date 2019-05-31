@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/radialIndicator/1.4.0/angular.radialIndicator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/radialIndicator/1.4.0/angular.radialIndicator.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/radialIndicator/1.4.0/radialIndicator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/radialIndicator/1.4.0/radialIndicator.min.js"></script>
+
+<link rel="stylesheet" href="JalaliJSCalendar/skins/calendar-green.css">
+<script src="JalaliJSCalendar/jalali.js"></script>
+<script src="JalaliJSCalendar/calendar.js"></script>
+<script src="JalaliJSCalendar/calendar-setup.js"></script>
+<script src="JalaliJSCalendar/lang/calendar-fa.js"></script>
+<style>
+.slidecontainer {
+  width: 100%;
+  height: 1px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Custom Range Slider</h1>
+
+<div class="slidecontainer">
+  <p>Default range slider:</p>
+  <input type="range" min="1" max="100" value="50" style="z-index: 1;position: relative;margin-bottom: -5px;width: 100%;">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style="margin-top:-35px; z-index:0; position: relative;">
+</div>
+<button id = "darkside" style="margin:150px;">ds</button>
+<script type="text/javascript">
+  $('#darkside').click(function(e){
+    alert("hello");
+  var $me = $(this), interval;
+  
+  e.preventDefault();
+  
+  $me.grumble(
+    {
+      angle: 130,
+      text: 'Look at me!',
+      type: 'alt-', 
+      distance: 10,
+      hideOnClick: true,
+      onShow: function(){
+        var angle = 130, dir = 1;
+        interval = setInterval(function(){
+          (angle > 220 ? (dir=-1, angle--) : ( angle < 130 ? (dir=1, angle++) : angle+=dir));
+          $me.grumble('adjust',{angle: angle});
+        },25);
+      },
+      onHide: function(){
+        clearInterval(interval);
+      }
+    }
+  );
+});
+</script>
+</body>
+</html>
