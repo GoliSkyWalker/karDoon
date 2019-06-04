@@ -20,7 +20,7 @@
 <script src="JalaliJSCalendar/lang/calendar-fa.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+ <script src="w3.js"></script> 
 
   <script>
 			window.__cmp('setLogo', "//home/kawaiigolechan/Documents/98-2/ui/UI2/logo.jpg", function(result){
@@ -232,52 +232,33 @@ input[type="range"] {
     </div >
  
     </div>
-   
-
-        
-
-      <!--<input type="range"  min="0" max="100" value="40"/>-->
+    
     </div>
     <div class="w3-third">
-      <!--<div class="w3-row">
-      <div class="w3-third">
-
-        </div>
-      <div class="w3-third w3-center">
-         <button class="w3-button w3-circle w3-blue w3-small">&#9658;</button>
-    </div>
-      <div class="w3-third">
-        <select class="w3-select w3-border w3-small"   name="option">
-        <option value="" disabled selected>کار تو انتخاب کن</option>
-        <option value="1">کار یک</option>
-        <option value="2">کار دو</option>
-        <option value="3">کار سه</option>
-      </select>
-    </div>
-</div>-->
+      
     </div>
   </div>
 
-  <div class="w3-row" style="margin-right: 170px; margin-top: 100px;">
+  <div class="w3-row" style="margin-right: 170px; margin-top: 10px;">
       <div class="w3-half ">
           <h2></h2>
         </div>
     <div class="w3-half w3-container">
-         <div class="w3-panel w3-pale-green w3-bottombar w3-border-green w3-border">
-          <ul class="w3-ul w3-hoverable" style="list-style-type:disc; margin-right: 25px; ">
-            <li style="color: red">
+         <div class="w3-panel  w3-bottombar w3-border-green w3-border">
+          <ul  class="w3-ul w3-hoverable" style="list-style-type:disc; margin-right: 25px; ">
+            <li id="idone" class=" w3-pale-green" style="color: gray">
             کار یک
-             <button class="w3-btn w3-circle w3-blue w3-left w3-padding-small w3-small"onclick="move()" >&#9658;</button>
+             <button class="w3-btn w3-circle w3-blue w3-left w3-padding-small w3-small"  onclick="move(); w3.toggleClass('#idone','w3-pale-green','w3-green');" >&#9658;</button>
                           <span class="w3-tag w3-red w3-center " style="transform:rotate(-5deg); margin-right: 80px;">دو ساعت</span>
 
           </li>
-            <li style="color: blue" class="test">
+            <li class=" w3-pale-green" style="color: blue" class="test">
             کار دو
              <button class="w3-btn w3-circle w3-blue w3-left w3-padding-small w3-small">&#9658;</button>
              <span class="w3-tag w3-blue w3-center " style="transform:rotate(-5deg); margin-right: 80px;">دو ساعت</span>
 
           </li>
-            <li style="color: purple">کار سه
+            <li class=" w3-pale-green" style="color: purple">کار سه
              <button class="w3-btn w3-circle w3-blue w3-left w3-padding-small w3-small">&#9658;</button>
                           <span class="w3-tag w3-purple w3-center " style="transform:rotate(-5deg); margin-right: 80px;">دو ساعت</span>
 
@@ -288,7 +269,10 @@ input[type="range"] {
          </div> 
     </div>
     <div class="footer w3-container w3-white">
-              <div class="calendar" id="calendar" style="direction: rtl;"></div>
+              <div class="calendar" id="calendar" style="direction: rtl;">
+              
+              
+              </div>
 
     </div>
   </div>
